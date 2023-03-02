@@ -45,15 +45,15 @@ def disguise_card(transactions):
     return transactions
 
 
-def data_format_change(transactions):
+def date_format_change(transactions):
+
     disguise_card(transactions)
     for i in transactions:
-        i['date'] = (datetime.datetime.strptime(i['date'], "%Y-%m-%dT%H:%M:%S.%f")).strptime("%d.%m.%Y")
+        i['date'] = (datetime.datetime.strptime(i['date'], "%Y-%m-%dT%H:%M:%S.%f")).strftime("%d.%m.%Y")
     return transactions
 
 
 def output(transactions):
-    date_format_change(transactions)
     for i in transactions:
         if 'Открытие вклада' in i['description']:
             print(f"{i['date']} {i['description']}\n"
