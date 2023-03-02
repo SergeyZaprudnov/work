@@ -46,7 +46,6 @@ def disguise_card(transactions):
 
 
 def date_format_change(transactions):
-
     disguise_card(transactions)
     for i in transactions:
         i['date'] = (datetime.datetime.strptime(i['date'], "%Y-%m-%dT%H:%M:%S.%f")).strftime("%d.%m.%Y")

@@ -34,6 +34,7 @@ def test_date_format_change():
     last_five_transaction = utils.last_five()[:5]
     assert isinstance(utils.date_format_change(last_five_transaction), list)
 
+
 def test_output():
     last_five_transaction = utils.last_five()[:5]
     assert utils.output(last_five_transaction) != utils.load_json()
